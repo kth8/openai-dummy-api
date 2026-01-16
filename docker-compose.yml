@@ -1,11 +1,6 @@
 services:
   openai-dummy-api:
-    build: .
+    image: ghcr.io/kth8/openai-dummy-api:latest
     ports:
       - "7000:7000"
-    environment:
-      - HOST=0.0.0.0
-      - PORT=7000
-      - DEBUG=false
-      - LOG_LEVEL=info
     restart: unless-stopped

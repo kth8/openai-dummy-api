@@ -35,7 +35,7 @@ uv run main.py
 
 ## Usage Examples
 
-Point any OpenAI-compatible client to `http://127.0.0.1:7000/v1`
+Point any OpenAI-compatible client at `http://127.0.0.1:7000/v1`
 
 ### cURL
 
