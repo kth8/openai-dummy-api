@@ -72,6 +72,11 @@ async function copyContent(elementId, btn) {
             btn.classList.remove('success');
         }, 2000);
     } catch (err) {
-        alert("Failed to copy to clipboard.");
+        console.error("Clipboard error:", err);
+        if (err.name === 'NotAllowedError') {
+            alert("Clipboard access denied. Ensure you're using HTTPS or localhost.");
+        } else {
+            alert("Failed to copy to clipboard: " + err.message);
+        }
     }
 }
