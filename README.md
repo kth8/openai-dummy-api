@@ -17,7 +17,7 @@ Open http://127.0.0.1:7000 in your browser.
 Create a `.env` file:
 
 ```bash
-$ cp .env.example .env
+cp .env.example .env
 ```
 
 Install dependencies:
