@@ -2,29 +2,40 @@
 
 A lightweight FastAPI server that mimics an OpenAI-compatible API to capture system prompts, user prompts, and tool definitions in real-time with a web dashboard.
 
-## Screenshots
-
-![Dashboard Overview](assets/dashboard-overview.png)
-
-![Usage Example](assets/usage-example.png)
-
 ## Quick Start
+
+### Docker
+
+```bash
+docker run --rm -it -p 7000:7000 ghcr.io/kth8/openai-dummy-api
+```
+
+Open http://127.0.0.1:7000 in your browser.
+
+### Local
 
 Create a `.env` file:
 
-```env
-HOST=127.0.0.1
-PORT=7000
+```bash
+$ cp .env.example .env
 ```
+
+Install dependencies:
 
 ```bash
 uv sync
 uv run main.py
 ```
 
-Open http://127.0.0.1:7000 in your browser.
+## Screenshots
+
+![Usage Example](assets/usage-example.png)
+
+![Dashboard Overview](assets/dashboard-overview.png)
 
 ## Usage Examples
+
+Point any OpenAI-compatible client to `http://127.0.0.1:7000/v1`
 
 ### cURL
 
@@ -46,7 +57,7 @@ curl -X POST http://127.0.0.1:7000/v1/chat/completions \
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="anything",
+    api_key="not-needed",
     base_url="http://127.0.0.1:7000/v1"
 )
 

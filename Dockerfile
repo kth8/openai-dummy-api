@@ -2,10 +2,9 @@ FROM ghcr.io/astral-sh/uv:python3.13-alpine
 
 WORKDIR /app
 
-COPY pyproject.toml ./
-RUN uv pip install --system --frozen --no-dev
-
 COPY . .
+
+RUN uv sync
 
 EXPOSE 7000
 
