@@ -58,7 +58,7 @@ async def chat_completions(request: ChatCompletionRequest):
 
     system_prompt_str = "No system prompt found."
     for msg in request.messages:
-        if msg.role == "system":
+        if msg.role in ["system", "developer"]:
             system_prompt_str = get_content_string(msg.content)
             if not system_prompt_str:
                 system_prompt_str = "[Empty System Prompt]"
